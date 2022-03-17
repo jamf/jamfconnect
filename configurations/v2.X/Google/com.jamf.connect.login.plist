@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AllowNetworkSelection</key>
+	<true/>
+	<key>BackgroundImage</key>
+	<string>/System/Library/Desktop Pictures/Monterey Graphic.heic</string>
+	<key>CreateJamfConnectPassword</key>
+	<true/>
+	<key>HelpURL</key>
+	<string>https://www.jamf.com/resources/product-documentation/jamf-connect-administrators-guide/</string>
+	<key>Migrate</key>
+	<true/>
+	<key>OIDCClientID</key>
+	<string>829415848243-dvvnb96qvvq7.apps.googleusercontent.com</string>
+	<key>OIDCClientSecret</key>
+	<string>a7mmj1123aadd99</string>
+	<key>OIDCNewPassword</key>
+	<true/>
+	<key>OIDCProvider</key>
+	<string>GoogleID</string>
+	<key>OIDCRedirectURI</key>
+	<string>https://127.0.0.1</string>
+	<key>OIDCUsePassthroughAuth</key>
+	<true/>
+</dict>
+</plist>

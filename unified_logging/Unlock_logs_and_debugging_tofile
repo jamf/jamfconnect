@@ -1,0 +1,7 @@
+# Unlock_logs_and_debugging_tofile
+#
+# Outputs all historical Jamf Unlock logs to a file 
+#
+# Filter Predicate:
+
+log show --style compact --predicate '(subsystem CONTAINS "com.jamf.connect") or (subsystem == "JamfBeacon")' --debug > ~/Desktop/JamfConnect.log

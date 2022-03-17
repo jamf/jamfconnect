@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IdPSettings</key>
+	<dict>
+		<key>Provider</key>
+		<string>OneLogin</string>
+		<key>ROPGID</key>
+		<string>9a4d9afsdfsdf8a0-a7dfd6a-01dfdfafa38-fd7e-0a9bafaffbefdf3a4173398</string>
+		<key>TenantID</key>
+		<string>orgtenant</string>
+	</dict>
+	<key>SignIn</key>
+	<dict>
+		<key>AutoAuthenticate</key>
+		<true/>
+		<key>RequireSignIn</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

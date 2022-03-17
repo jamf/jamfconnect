@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AllowNetworkSelection</key>
+	<true/>
+	<key>AuthServer</key>
+	<string>orgtenant.okta.com</string>
+	<key>BackgroundImage</key>
+	<string>/System/Library/Desktop Pictures/Monterey Graphic.heic</string>
+	<key>CreateJamfConnectPassword</key>
+	<true/>
+	<key>DemobilizeUsers</key>
+	<false/>
+	<key>HelpURL</key>
+	<string>https://www.jamf.com/resources/product-documentation/jamf-connect-administrators-guide/</string>
+	<key>Migrate</key>
+	<true/>
+	<key>OIDCAccessClientID</key>
+	<string>0osfsdfsda1ht3yfnwasdfasfasq6pvSz0dfdh8</string>
+	<key>OIDCAdminClientID</key>
+	<string>0osfsdfsda1ht3yfnwasdfasfasq6pvSz0dfdh8</string>
+	<key>OIDCNewPassword</key>
+	<false/>
+	<key>OIDCProvider</key>
+	<string>Okta</string>
+	<key>OIDCRedirectURI</key>
+	<string>https://127.0.0.1/jamfconnect</string>
+</dict>
+</plist>

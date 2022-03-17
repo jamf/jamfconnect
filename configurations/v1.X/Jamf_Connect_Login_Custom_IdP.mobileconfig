@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>OIDCProvider</key>
+        <string>Custom</string>
+        <key>OIDCROPGID</key>
+        <string>3bdd52c7-ee36-4689-8517-c5fed2c98s5</string>
+        <key>OIDCClientID</key>
+        <string>3bdd52c7-ee36-4689-8517-c5fed2c98s5</string>
+        <key>OIDCRedirectURI</key>
+        <string>https://127.0.0.1/jamfconnect</string>
+        <key>OIDCDiscoveryURL</key>
+        <string>https://identity-provider-example-address.com/.well-known/openid-configuration</string>
+        <key>OIDCNewPassword</key>
+        <false/>
+     </dict>   
+</plist>

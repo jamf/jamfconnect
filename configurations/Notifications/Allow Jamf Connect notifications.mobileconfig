@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+
+<plist version="1.0">
+    <dict>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>PayloadDisplayName</key>
+        <string>Allow Jamf Connect notifications</string>
+        <key>PayloadScope</key>
+        <string>System</string>
+        <key>PayloadType</key>
+        <string>Configuration</string>
+        <key>PayloadContent</key>
+        <array>
+            <dict>
+                <key>PayloadOrganization</key>
+                <string></string>
+                <key>PayloadDisplayName</key>
+                <string>Notifications</string>
+                <key>PayloadUUID</key>
+                <string>FCD561E1-EA48-4867-9740-85D50BF88BBB</string>
+                <key>PayloadType</key>
+                <string>com.apple.notificationsettings</string>
+                <key>PayloadIdentifier</key>
+                <string>com.apple.notificationsettings.FCD561E1-EA48-4867-9740-85D50BF88BBB</string>
+                <key>PayloadVersion</key>
+                <integer>1</integer>
+                <key>NotificationSettings</key>
+                <array>
+                    <dict>
+                        <key>BadgesEnabled</key>
+                        <true/>
+                        <key>ShowInLockScreen</key>
+                        <true/>
+                        <key>AlertType</key>
+                        <integer>1</integer>
+                        <key>CriticalAlertEnabled</key>
+                        <false/>
+                        <key>SoundsEnabled</key>
+                        <true/>
+                        <key>BundleIdentifier</key>
+                        <string>com.jamf.connect</string>
+                        <key>ShowInNotificationCenter</key>
+                        <true/>
+                        <key>NotificationsEnabled</key>
+                        <true/>
+                    </dict>
+                </array>
+            </dict>
+        </array>
+        <key>PayloadIdentifier</key>
+        <string>com.jamf.connect.AC701B81-3D30-4B15-A813-09D24A92E8DA</string>
+        <key>PayloadOrganization</key>
+        <string>Jamf Connect</string>
+        <key>PayloadUUID</key>
+        <string>AC701B81-3D30-4B15-A813-09D24A92E8DA</string>
+    </dict>
+</plist>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AllowNetworkSelection</key>
+	<true/>
+	<key>BackgroundImage</key>
+	<string>/System/Library/Desktop Pictures/Monterey Graphic.heic</string>
+	<key>CreateJamfConnectPassword</key>
+	<true/>
+	<key>HelpURL</key>
+	<string>https://www.jamf.com/resources/product-documentation/jamf-connect-administrators-guide/</string>
+	<key>Migrate</key>
+	<true/>
+	<key>OIDCAdmin</key>
+	<array>
+		<string>Admin</string>
+	</array>
+	<key>OIDCAdminAttribute</key>
+	<string>roles</string>
+	<key>OIDCClientID</key>
+	<string>2520sdfsfsfbebfd2-53ffs5e-4ae4sdfsf2-bfddfs70-1d4cd5429asdasf551</string>
+	<key>OIDCNewPassword</key>
+	<false/>
+	<key>OIDCProvider</key>
+	<string>Azure</string>
+	<key>OIDCROPGID</key>
+	<string>2520sdfsfsfbebfd2-53ffs5e-4ae4sdfsf2-bfddfs70-1d4cd5429asdasf551</string>
+	<key>OIDCUsePassthroughAuth</key>
+	<true/>
+</dict>
+</plist>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+
+<plist version="1.0">
+    <dict>
+        <key>PayloadContent</key>
+        <array>
+            <dict>
+                <key>PayloadDisplayName</key>
+                <string>Privacy Preferences Policy Control</string>
+                <key>PayloadIdentifier</key>
+                <string>com.jamf.connect.login.A228449A-F0D3-4A1E-AA6B-9D987CEB3013.com.apple.TCC.configuration-profile-policy</string>
+                <key>PayloadOrganization</key>
+                <string></string>
+                <key>PayloadType</key>
+                <string>com.apple.TCC.configuration-profile-policy</string>
+                <key>PayloadUUID</key>
+                <string>EB4F0B24-1A1C-4A6C-BEA6-DD41F7E6120B</string>
+                <key>PayloadVersion</key>
+                <integer>1</integer>
+                <key>Services</key>
+                <dict>
+                    <key>SystemPolicyAllFiles</key>
+                    <array>
+                        <dict>
+                            <key>Allowed</key>
+                            <true/>
+                            <key>CodeRequirement</key>
+                            <string>identifier "com.apple.authorizationhost" and anchor apple</string>
+                            <key>Comment</key>
+                            <string></string>
+                            <key>Identifier</key>
+                            <string>com.apple.authorizationhost</string>
+                            <key>IdentifierType</key>
+                            <string>bundleID</string>
+                            <key>StaticCode</key>
+                            <false/>
+                        </dict>
+                    </array>
+                </dict>
+            </dict>
+        </array>
+        <key>PayloadDisplayName</key>
+        <string>TCC Settings for fdesetup from loginwindow</string>
+        <key>PayloadIdentifier</key>
+        <string>com.jamf.connect.login.A228449A-F0D3-4A1E-AA6B-9D987CEB3013</string>
+        <key>PayloadOrganization</key>
+        <string>ProfileCreator</string>
+        <key>PayloadScope</key>
+        <string>System</string>
+        <key>PayloadType</key>
+        <string>Configuration</string>
+        <key>PayloadUUID</key>
+        <string>A228449A-F0D3-4A1E-AA6B-9D987CEB3013</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+    </dict>
+</plist>

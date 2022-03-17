@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Appearance</key>
+	<dict>
+		<key>ShowWelcomeWindow</key>
+		<false/>
+	</dict>
+	<key>HiddenMenuItems</key>
+	<array>
+		<string>ChangePassword</string>
+		<string>GetSoftware</string>
+		<string>HomeDirectory</string>
+		<string>PasswordExpiration</string>
+		<string>ResetPassword</string>
+	</array>
+	<key>IdPSettings</key>
+	<dict>
+		<key>Provider</key>
+		<string>Azure</string>
+		<key>ROPGID</key>
+		<string>2520sdfsfsfbebfd2-53ffs5e-4ae4sdfsf2-bfddfs70-1d4cd5429asdasf551</string>
+	</dict>
+	<key>Kerberos</key>
+	<dict>
+		<key>AutoRenewTickets</key>
+		<false/>
+	</dict>
+	<key>PasswordPolicies</key>
+	<dict>
+		<key>ExpirationCountdownStartDay</key>
+		<integer>15</integer>
+	</dict>
+	<key>SignIn</key>
+	<dict>
+		<key>AutoAuthenticate</key>
+		<true/>
+		<key>RequireSignIn</key>
+		<true/>
+	</dict>
+	<key>Unlock</key>
+	<dict>
+		<key>EnableUnlock</key>
+		<true/>
+		<key>RequirePIN</key>
+		<true/>
+	</dict>
+	<key>UserHelp</key>
+	<dict>
+		<key>HelpOptions</key>
+		<string>https://www.jamf.com/resources/product-documentation/jamf-connect-administrators-guide/</string>
+		<key>HelpType</key>
+		<string>URL</string>
+	</dict>
+</dict>
+</plist>

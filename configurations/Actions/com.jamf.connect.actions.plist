@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>en0</string>
+			<key>Title</key>
+			<dict>
+				<key>Command</key>
+				<string>path</string>
+				<key>CommandOptions</key>
+				<string>/usr/sbin/ipconfig getifaddr en0</string>
+			</dict>
+			<key>ToolTip</key>
+			<string>Primary IP Address</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Hostname</string>
+			<key>Title</key>
+			<dict>
+				<key>Command</key>
+				<string>path</string>
+				<key>CommandOptions</key>
+				<string>/bin/hostname</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>separator</string>
+		</dict>
+		<dict>
+			<key>Action</key>
+			<array>
+				<dict>
+					<key>Command</key>
+					<string>url</string>
+					<key>CommandOptions</key>
+					<string>https://www.jamf.com</string>
+				</dict>
+			</array>
+			<key>Name</key>
+			<string>Open jamf.com in your browser</string>
+		</dict>
+		<dict>
+			<key>Action</key>
+			<array>
+				<dict>
+					<key>Command</key>
+					<string>app</string>
+					<key>CommandOptions</key>
+					<string>/System/Applications/Calculator.app</string>
+				</dict>
+			</array>
+			<key>Name</key>
+			<string>Open Calculator</string>
+		</dict>
+	</array>
+</dict>
+</plist>

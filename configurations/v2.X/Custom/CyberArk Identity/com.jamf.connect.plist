@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Appearance</key>
+	<dict>
+		<key>ShowWelcomeWindow</key>
+		<false/>
+	</dict>
+	<key>IdPSettings</key>
+	<dict>
+		<key>ChangePasswordURL</key>
+		<string>https://yourTenant.my.idaptive.app/my#/MyAccount</string>
+		<key>ClientSecret</key>
+		<string>efdddd8678a-faaf33-4433-9a444402-f6bf223f2aade581088</string>
+		<key>DiscoveryURL</key>
+		<string>https://yourTenant.my.idaptive.app/jamfconnectropg/.well-known/openid-configuration</string>
+		<key>Provider</key>
+		<string>Custom</string>
+		<key>ROPGID</key>
+		<string>199c111362d7-333312-4c53-22231dd-de2209bc827f</string>
+		<key>ResetPasswordURL</key>
+		<string>https://yourTenant.my.idaptive.app/my</string>
+		<key>TenantID</key>
+		<string>https://yourTenant.my.idaptive.app</string>
+	</dict>
+	<key>PasswordPolicies</key>
+	<dict>
+		<key>NetworkCheck</key>
+		<integer>5</integer>
+	</dict>
+	<key>SignIn</key>
+	<dict>
+		<key>AutoAuthenticate</key>
+		<true/>
+		<key>RequireSignIn</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

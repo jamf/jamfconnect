@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AllowNetworkSelection</key>
+	<true/>
+	<key>BackgroundImage</key>
+	<string>/System/Library/Desktop Pictures/Monterey Graphic.heic</string>
+	<key>CreateJamfConnectPassword</key>
+	<true/>
+	<key>HelpURL</key>
+	<string>https://www.jamf.com/resources/product-documentation/jamf-connect-administrators-guide/</string>
+	<key>Migrate</key>
+	<true/>
+	<key>OIDCAdmin</key>
+	<array>
+		<string>admin</string>
+	</array>
+	<key>OIDCAdminAttribute</key>
+	<string>groups</string>
+	<key>OIDCClientID</key>
+	<string>9a4d9afsdfsdf8a0-a7dfd6a-01dfdfafa38-fd7e-0a9bafaffbefdf3a4173398</string>
+	<key>OIDCNewPassword</key>
+	<false/>
+	<key>OIDCProvider</key>
+	<string>OneLogin</string>
+	<key>OIDCROPGID</key>
+	<string>9a4d9afsdfsdf8a0-a7dfd6a-01dfdfafa38-fd7e-0a9bafaffbefdf3a4173398</string>
+	<key>OIDCRedirectURI</key>
+	<string>https://127.0.0.1/jamfconnect</string>
+	<key>OIDCTenant</key>
+	<string>orgtenant</string>
+	<key>OIDCUsePassthroughAuth</key>
+	<true/>
+	<key>ScriptPath</key>
+	<string>/Users/Shared/JamfConnectEvaluationAssets/NotifyMech.sh</string>
+</dict>
+</plist>

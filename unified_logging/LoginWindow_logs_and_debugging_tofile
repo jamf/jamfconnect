@@ -1,0 +1,7 @@
+# LoginWindow_logs_and_debugging_tofile
+#
+# Outputs all historical Jamf Connect at LoginWindow logs to a file
+#
+# Filter Predicate:
+
+log show --style compact --predicate 'subsystem == "com.jamf.connect.login"' --debug > ~/Desktop/JamfConnectLogin.log

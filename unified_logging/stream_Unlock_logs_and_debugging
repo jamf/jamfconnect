@@ -1,0 +1,7 @@
+# stream_Unlock_logs_and_debugging
+#
+# Streams current logs Terminal from subsystem "com.jamf.connect" and "JamfBeacon" for troubleshooting Jamf Unlock
+#
+# Filter Predicate:
+
+log stream --style compact --predicate '(subsystem CONTAINS "com.jamf.connect") or (subsystem == "JamfBeacon")' --debug

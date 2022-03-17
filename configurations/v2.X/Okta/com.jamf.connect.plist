@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IdPSettings</key>
+	<dict>
+		<key>OktaAuthServer</key>
+		<string>orgtenant.okta.com</string>
+		<key>Provider</key>
+		<string>Okta</string>
+	</dict>
+	<key>SignIn</key>
+	<dict>
+		<key>AutoAuthenticate</key>
+		<true/>
+		<key>RequireSignIn</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

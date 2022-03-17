@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+ <dict>
+  <key>OIDCProvider</key> 
+  <string>Azure</string>
+  <key>OIDCClientID</key>
+  <string>3bff52c7-rr36-4889-8517-c5fed2c79573</string>
+  <key>OIDCRedirectURI</key>
+  <string>https://127.0.0.1/jamfconnect</string>
+  <key>ROPGProvider</key>
+  <string>Custom</string>
+  <key>OIDCROPGID</key>
+  <string>86f07d1c-0ae4-437d-9fde-fcf165a5a965</string>
+  <key>ROPGRedirectURI</key>
+  <string>https://127.0.0.1/jamfconnect</string>
+  <key>ROPGDiscoveryURL</key>
+  <string>https://adfs.jamfconnect.com/adfs/.well-known/openid-configuration</string
+ </dict>
+</plist>

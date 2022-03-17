@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AllowNetworkSelection</key>
+	<true/>
+	<key>BackgroundImage</key>
+	<string>/System/Library/Desktop Pictures/Monterey Graphic.heic</string>
+	<key>CreateAdminUser</key>
+	<true/>
+	<key>CreateJamfConnectPassword</key>
+	<true/>
+	<key>EnableFDE</key>
+	<true/>
+	<key>HelpURL</key>
+	<string>https://www.jamf.com/resources/product-documentation/jamf-connect-administrators-guide/</string>
+	<key>LocalFallback</key>
+	<true/>
+	<key>LoginWindowMessage</key>
+	<string>Welcome to youre Mac!</string>
+	<key>OIDCClientID</key>
+	<string>199c111362d7-333312-4c53-22231dd-de2209bc827f</string>
+	<key>OIDCClientSecret</key>
+	<string>efdddd8678a-faaf33-4433-9a444402-f6bf223f2aade581088</string>
+	<key>OIDCDiscoveryURL</key>
+	<string>https://yourTenant.my.idaptive.app/jamfconnect/.well-known/openid-configuration</string>
+	<key>OIDCLocalAuthButton</key>
+	<string>Login Locally</string>
+	<key>OIDCNewPassword</key>
+	<false/>
+	<key>OIDCProvider</key>
+	<string>Custom</string>
+	<key>OIDCROPGID</key>
+	<string>199c111362d7-333312-4c53-22231dd-de2209bc827f</string>
+	<key>OIDCRedirectURI</key>
+	<string>https://127.0.0.1/jamfconnect</string>
+	<key>OIDCShortName</key>
+	<string>name</string>
+	<key>OIDCTenant</key>
+	<string>https://yourTenant.my.idaptive.app</string>
+	<key>ROPGClientSecret</key>
+	<string>efdddd8678a-faaf33-4433-9a444402-f6bf223f2aade581088</string>
+	<key>ROPGDiscoveryURL</key>
+	<string>https://yourTenant.my.idaptive.app/jamfconnectropg/.well-known/openid-configuration</string>
+	<key>ROPGTenant</key>
+	<string>https://yourTenant.my.idaptive.app</string>
+</dict>
+</plist>

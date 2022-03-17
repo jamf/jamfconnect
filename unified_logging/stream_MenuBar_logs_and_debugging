@@ -1,0 +1,7 @@
+# stream_MenuBar_logs_and_debugging
+#
+# Streams current logs in Terminal from subsystem "com.jamf.connect"
+#
+# Filter Predicate:
+
+log stream --style compact --predicate 'subsystem == "com.jamf.connect"' --debug
