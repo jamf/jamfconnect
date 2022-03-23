@@ -45,4 +45,4 @@ Use the extension attribute as the criteria for smart group in Jamf Pro, and the
 - Run a policy to disable the Jamf Connect login window after the count is `1` or more.
 - Ensure local account migration of existing accounts with Jamf Connect succeeded.
 
-## Disclaimer: All resources contained in this repository are provided as-is and are not officially supported by Jamf Support.
+**Disclaimer:** All resources contained in this repository are provided as-is and are not officially supported by Jamf Support.

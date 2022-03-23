@@ -14,4 +14,4 @@ You can track app and user status settings via Jamf Connect's [State Settings an
 - **Password information**—Details about a user’s password settings, such as their password expiration date or password complexity requirements found in Active Directory.
 - **App information**—Details about Jamf Connect processes, such as if the app has been opened by the user and timestamps of the last sign-in or app notification.To read Jamf Connect state settings on a computer, execute the following command:
 
-## Disclaimer: All resources contained in this repository are provided as-is and are not officially supported by Jamf Support.
+**Disclaimer:** All resources contained in this repository are provided as-is and are not officially supported by Jamf Support.

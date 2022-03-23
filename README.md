@@ -36,4 +36,4 @@ For more information about Jamf Connect logs, see [Jamf Connect Logs](https://do
 
 ### See the [Wiki](https://github.com/jamf/jamfconnect/wiki) for detailed information about each resource in this repository.
 
-## Disclaimer: All resources contained in this repository are provided as-is and are not officially supported by Jamf Support.
+**Disclaimer:** All resources contained in this repository are provided as-is and are not officially supported by Jamf Support.
