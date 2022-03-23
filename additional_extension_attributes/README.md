@@ -34,7 +34,7 @@ Add the extension attribute to Jamf Pro to display the result in a user's invent
 - Set the `DenyLocal` preference key to `true` for in the `com.jamf.connect.login` preference domain, which will force a user to use network authentication with Jamf Connect on their next login, even if FileVault is enabled.
 - Use the Jamf Helper utility to execute a script that prompts users to sign in with Jamf Connect.
 
-# Count of Jamf Connect users
+## Total Count of Jamf Connect users
 
 Determine how many local user accounts on a computer are connect to a network account in your IdP via Jamf Connect.
 
@@ -44,3 +44,5 @@ Use the extension attribute as the criteria for smart group in Jamf Pro, and the
 
 - Run a policy to disable the Jamf Connect login window after the count is `1` or more.
 - Ensure local account migration of existing accounts with Jamf Connect succeeded.
+
+## Disclaimer: All resources contained in this repository are provided as-is and are not officially supported by Jamf Support.
