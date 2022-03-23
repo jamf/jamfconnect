@@ -1,49 +1,46 @@
-# jamf-extension-attributes
+# Additional Extension Attributes
 
-Look for Unmigrated Users:
-An extension attribute for Jamf Connect and Jamf Pro.  Add this script as an EA.
-EA will return a list of short names on a machine of users have a local password
-who are not yet migrated to Jamf Connect Login.  
+The following extension attributes are curated by Jamf's Professional Services and Consulting Engineering teams, and they are not available as templates in Jamf Pro.
 
-Sample Use:
-Use EA with a Smart Computer Group.  Use the Smart Computer Group to scope a configuration
-profile that DenyLocal login for any users who haven't migrated yet.
+To use these extension attributes, upload them to Jamf Pro.
 
-Sample Use:
-Search for machines that have "rogue" local accounts not controlled by your IdP's controls.
+## Look for Unmigrated Users
 
+Returns a list of user account names (a.k.a short names) on a computer that have not yet been migrated via logging in with Jamf Connect.
 
-Look for Network Users:
-Search for mobile account users 
+Use Cases:
 
+- Use extension attribute as criteria for a smart computer group, and then use the smart group in the scope of a configuration profile, such as a Jamf Connect configuration that blocks local authentication at the login window until migration is complete.
+- Search for computers that have local accounts that are not yet controlled and connected with your identity provider (IdP).
 
-Will return either "No Network Accounts" if no accounts exist or a list of the 
-short names of network accounts on a macOS device
+## Look for Network Users
 
-Sample Use:
-Use with smart groups in Jamf Pro to scope for NoMAD or Jamf Connect to demobilize
-user accounts.  For example, if no network accounts exist, remove the DeMobilize mechanism
-from Jamf Connect Login with an authchanger command.  Or, use the presence of no
-mobile accounts as the trigger to turn on Migrate flag in a Jamf Connect Login 
-configuration profile.
+Returns a list of users with mobile (network) accounts. The extension attribute result returns "No Network Accounts" if no mobile accounts exist, or a list of mobile account names on the computer.
 
+Use Case:
 
-Last Jamf Connect menu bar agent login within range:
-Find out if a user has logged into Jamf Connect successfully within a certain time frame in days
+Use the extension attribute as the criteria for smart group in Jamf Pro, and then use the scope of the smart group to execute account demobilization using Jamf Connect or NoMAD. If mobile accounts exists, you can disable the demobilize loginwindow mechanism in Jamf Connect using the `authchanger` command-line tool. Alternatively use the result of no mobile accounts as a trigger to enable Jamf Connect's account migration workflow to connect all demobilized local accounts to user network accounts in your IdP.
 
-Sample Use:
-Use as an extension attribute in Jamf Pro.  If a user hasn't logged in successfully in X days,
-you can use the EA to create a Smart Computer Group.  Remediate the issue however you wish, but
-some suggestions are to:
-* Add the DenyLocal preference set to TRUE for com.jamf.connect.login - forces network login on next
-	login even if FileVault is enabled
-* Use the Jamf Helper Utility as a script to force sign-in with a message explaining why they are
-	being required to log in
-	
-Count of Jamf Connect users:
-Determine how many local user accounts on a machine are tied to Jamf Connect and an identity provider identity
+For more information, about using this extension attribute, see the [Demobilizing and Unbinding Mobile Accounts with Jamf Connect and Jamf Pro](https://docs.jamf.com/technical-articles/Demobilizing_and_Unbinding_Mobile_Accounts_with_Jamf_Connect_and_Jamf_Pro.html) article.
 
-Sample Use:
-Use as an extension attribute in Jamf Pro.  Use the EA to create a Smart Computer Group.  Some suggestions include:
-* Use the Smart Computer Group to run a policy to disable Jamf Connect login window after the count is 1 or greater
-* Make sure users have been properly migrated to using Jamf Connect instead of a local login
+## Last Jamf Connect menu bar app sign-in within time range
+
+Determine if a user successfully signed in with Jamf Connect successfully within a certain time frame, in days.
+
+Use Case:
+
+Add the extension attribute to Jamf Pro to display the result in a user's inventory information. If a user hasn't logged in successfully in a certain amount of days, you can use the extension attribute as criteria for a smart computer group and then use the smart computer group to remediate the issue in the following ways:
+
+- Set the `DenyLocal` preference key to `true` for in the `com.jamf.connect.login` preference domain, which will force a user to use network authentication with Jamf Connect on their next login, even if FileVault is enabled.
+- Use the Jamf Helper utility to execute a script that prompts users to sign in with Jamf Connect.
+
+# Count of Jamf Connect users
+
+Determine how many local user accounts on a computer are connect to a network account in your IdP via Jamf Connect.
+
+Use Case:
+
+Use the extension attribute as the criteria for smart group in Jamf Pro, and then use the scope of the smart group to do the following:
+
+- Run a policy to disable the Jamf Connect login window after the count is `1` or more.
+- Ensure local account migration of existing accounts with Jamf Connect succeeded.
