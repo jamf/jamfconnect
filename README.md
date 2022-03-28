@@ -34,6 +34,4 @@ Some Jamf Connect processes can be run via scripts:
 
 For more information about Jamf Connect logs, see [Jamf Connect Logs](https://docs.jamf.com/jamf-connect/documentation/Jamf_Connect_Logs.html) in the _Jamf Connect Documentation_.
 
-### See the [Wiki](https://github.com/jamf/jamfconnect/wiki) for detailed information about each resource in this repository.
-
 **Disclaimer:** All resources contained in this repository are provided as-is and are not officially supported by Jamf Support.
