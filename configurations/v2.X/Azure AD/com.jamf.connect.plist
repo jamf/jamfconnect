@@ -9,11 +9,7 @@
 	</dict>
 	<key>HiddenMenuItems</key>
 	<array>
-		<string>ChangePassword</string>
-		<string>GetSoftware</string>
-		<string>HomeDirectory</string>
-		<string>PasswordExpiration</string>
-		<string>ResetPassword</string>
+		<string>resetpassword</string>
 	</array>
 	<key>IdPSettings</key>
 	<dict>
