@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Appearance</key>
+	<dict>
+		<key>ShowWelcomeWindow</key>
+		<false/>
+	</dict>
+	<key>HiddenMenuItems</key>
+	<array>
+		<string>resetpassword</string>
+	</array>
+	<key>IdPSettings</key>
+	<dict>
+		<key>ChangePasswordURL</key>
+		<string>https://custom.pingfederateurl.com:9031/ext/pwdchange/Identify?AdapterId=PingOneHTMLFormAdapter</string>
+		<key>DiscoveryURL</key>
+		<string>https://custom.pingfederateurl.com:9031/.well-known/openid-configuration</string>
+		<key>Provider</key>
+		<string>PingFederate</string>
+		<key>ROPGID</key>
+		<string>jamfconnect</string>
+		<key>TenantID</key>
+		<string>jamfconnect</string>
+	</dict>
+	<key>PasswordPolicies</key>
+	<dict>
+		<key>ExpirationCountdownStartDay</key>
+		<integer>15</integer>
+	</dict>
+	<key>SignIn</key>
+	<dict>
+		<key>AutoAuthenticate</key>
+		<true/>
+		<key>RequireSignIn</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

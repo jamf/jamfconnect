@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AllowNetworkSelection</key>
+	<true/>
+	<key>BackgroundImage</key>
+	<string>/System/Library/Desktop Pictures/Monterey Graphic.heic</string>
+	<key>CreateAdminUser</key>
+	<true/>
+	<key>CreateJamfConnectPassword</key>
+	<true/>
+	<key>EnableFDE</key>
+	<true/>
+	<key>HelpURL</key>
+	<string>https://www.jamf.com/resources/product-documentation/jamf-connect-administrators-guide/</string>
+	<key>LocalFallback</key>
+	<true/>
+	<key>LoginWindowMessage</key>
+	<string>Welcome to your Mac!</string>
+	<key>Migrate</key>
+	<false/>
+	<key>OIDCClientID</key>
+	<string>B868761C-D7B3-4075-AB48-355945B1F050</string>
+	<key>OIDCDiscoveryURL</key>
+	<string>https://sso.connect.pingidentity.com/a8asasdfsad419-2423-4dbbab-9220ca-9f927aadb1cfd/.well-known/openid-configuration</string>
+	<key>OIDCProvider</key>
+	<string>PingFederate</string>
+	<key>OIDCROPGID</key>
+	<string>jamfconnect</string>
+	<key>OIDCRedirectURI</key>
+	<string>https://127.0.0.1/jamfconnect</string>
+	<key>OIDCScopes</key>
+	<string>openid+profile+email</string>
+	<key>OIDCUsePassthroughAuth</key>
+	<true/>
+	<key>ROPGDiscoveryURL</key>
+	<string>https://custom.pingfederateurl.com:9031/.well-known/openid-configuration</string>
+	<key>ROPGTenant</key>
+	<string>jamfconnect</string>
+	<key>UseUserInfo</key>
+	<true/>
+</dict>
+</plist>
