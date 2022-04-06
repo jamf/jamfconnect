@@ -1,3 +1,4 @@
+# Copyright (c) 2022 JAMF Software, LLC
 # failed_authentication_via_jc
 #
 # This Unified Log filter may be used to report on failed authentication attempts through the Jamf Connect application.

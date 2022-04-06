@@ -1,4 +1,7 @@
 #!/bin/zsh
+# Copyright (c) 2022 JAMF Software, LLC
+
+
 #variables
 NOTIFY_LOG="/var/tmp/depnotify.log"
 #For TOKEN_BASIC, use same file path location as set for OIDCIDTokenPath in com.jamf.connect.login

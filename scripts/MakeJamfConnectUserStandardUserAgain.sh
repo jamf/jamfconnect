@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Copyright (c) 2022 JAMF Software, LLC
+
 # A script to remove the attributes that Jamf Connect uses to determine if a
 # local user account has already been migrated to match up with an identity
 # provider.  

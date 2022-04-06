@@ -1,3 +1,4 @@
+# Copyright (c) 2022 JAMF Software, LLC
 # LoginWindow_logs_and_debugging_tofile
 #
 # Outputs all historical Jamf Connect at LoginWindow logs to a file

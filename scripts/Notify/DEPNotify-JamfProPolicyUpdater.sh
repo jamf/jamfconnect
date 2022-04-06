@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # Jamf Connect Notify updater
 # Use in any Jamf Pro policy to update the Jamf Connect notify mechanism without all the mucking about writing scripts
 # Should work with DEP Notify as well as Jamf Connect notify mechanism

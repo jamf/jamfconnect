@@ -1,3 +1,4 @@
+# Copyright (c) 2022 JAMF Software, LLC
 # cloud_idp_authentication_bypass_and_local_user_authentication
 #
 # This Unified Log filter may be used to report on a user bypassing authentication to the Cloud Identity Provider configured for use with Jamf Connect and instead completing an authentication against a local user account on the device only.

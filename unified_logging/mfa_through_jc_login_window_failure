@@ -1,3 +1,4 @@
+# Copyright (c) 2022 JAMF Software, LLC
 # mfa_through_jc_login_window_failure
 #
 # This Unified Log filter may be used to report on failed multi-factor authentication (MFA) events at the Jamf Connect login window.

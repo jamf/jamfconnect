@@ -4,6 +4,7 @@
 # Data Type: String
 # Input Type: Script
 #
+# Copyright (c) 2022 JAMF Software, LLC
 ##### Script starts here #####
 
 #Jamf Connect Login Location
