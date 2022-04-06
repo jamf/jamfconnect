@@ -20,7 +20,7 @@ Jamf Connect writes data to the `com.jamf.connect.state` preference domain on co
 
 For more information about using Extension Attributes with Jamf Pro, see [Computer Extension Attributes](https://docs.jamf.com/jamf-pro/administrator-guide/Computer_Extension_Attributes.html) in the _Jamf Pro Documentation_.
 
-Additional extension attributes curated by Jamf's Professional Services and Consulting Engineering teams are in a the `additional_extension_attributes` folder.
+Additional extension attributes curated by Jamf's Professional Services and Consulting Engineering teams are in `additional_extension_attributes` folder.
 
 ### Jamf Connect Scripts
 
