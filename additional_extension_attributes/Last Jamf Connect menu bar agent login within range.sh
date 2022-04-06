@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Jamf Connect state - Is the last successful sign-in within the specified number of days
-# Sean Rabbitt Oct 16, 2020
 # Copyright (c) 2020 JAMF Software, LLC
 #
 # Script type: Jamf Pro Extension Attribute
@@ -25,6 +24,7 @@
 	
 # ADMIN: Change the next line to the number of days you want to check.  In this case, we're checking to see if
 # 	a user has logged in successfully within the last 
+
 LastSignInMaxAge=14 # Numeric value in DAYS
 
 #Get current signed in user
