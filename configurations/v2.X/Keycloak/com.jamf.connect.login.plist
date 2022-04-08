@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BackgroundImage</key>
+	<string>/System/Library/Desktop Pictures/Monterey Graphic.heic</string>
+	<key>CreateAdminUser</key>
+	<false/>
+	<key>CreateJamfConnectPassword</key>
+	<true/>
+	<key>OIDCAdmin</key>
+	<array>
+		<string>roles</string>
+	</array>
+	<key>OIDCAdminAttribute</key>
+	<string>Admin</string>
+	<key>OIDCClientID</key>
+	<string>jamfconnect</string>
+	<key>OIDCDiscoveryURL</key>
+	<string>http://public-keycloak-url:8080/realms/realm_name/.well-known/openid-configuration</string>
+	<key>OIDCProvider</key>
+	<string>Custom</string>
+	<key>OIDCROPGID</key>
+	<string>jamfconnect</string>
+	<key>OIDCRedirectURI</key>
+	<string>https://127.0.0.1/jamfconnect</string>
+	<key>OIDCScopes</key>
+	<string>openid profile email roles</string>
+	<key>OIDCTenant</key>
+	<string>publkc-keycloak-url:8080/realms/realm_name/jamfconnect</string>
+	<key>ROPGDiscoveryURL</key>
+	<string>http://public-keycloak-url:8080/realms/realm_name/.well-known/openid-configuration</string>
+	<key>ROPGTenant</key>
+	<string>Keycloak_realm_name</string>
+</dict>
+</plist>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IdPSettings</key>
+	<dict>
+		<key>DiscoveryURL</key>
+		<string>http://public-keycloak-url:8080/realms/realm_name/.well-known/openid-configuration</string>
+		<key>Provider</key>
+		<string>Custom</string>
+		<key>ROPGID</key>
+		<string>jamfconnect</string>
+		<key>TenantID</key>
+		<string>Keycloak_realm_name</string>
+	</dict>
+</dict>
+</plist>
