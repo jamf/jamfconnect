@@ -4,12 +4,16 @@
 <dict>
 	<key>IdPSettings</key>
 	<dict>
+		<key>ChangePasswordURL</key>
+		<string>http://public-keycloak-url:8080/realms/realm_name/account</string>
 		<key>DiscoveryURL</key>
 		<string>http://public-keycloak-url:8080/realms/realm_name/.well-known/openid-configuration</string>
 		<key>Provider</key>
 		<string>Custom</string>
 		<key>ROPGID</key>
 		<string>jamfconnect</string>
+		<key>ResetPasswordURL</key>
+		<string>http://public-keycloak-url:8080/realms/realm_name/login-actions/reset-credentials?client_id=account-console&amp;tab_id=-UOubqd-sec</string>
 		<key>TenantID</key>
 		<string>Keycloak_realm_name</string>
 	</dict>
