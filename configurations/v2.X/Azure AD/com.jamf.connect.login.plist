@@ -4,8 +4,6 @@
 <dict>
 	<key>AllowNetworkSelection</key>
 	<true/>
-	<key>BackgroundImage</key>
-	<string>/System/Library/Desktop Pictures/Monterey Graphic.heic</string>
 	<key>CreateJamfConnectPassword</key>
 	<true/>
 	<key>HelpURL</key>

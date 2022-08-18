@@ -6,8 +6,6 @@
 	<true/>
 	<key>AuthServer</key>
 	<string>orgtenant.okta.com</string>
-	<key>BackgroundImage</key>
-	<string>/System/Library/Desktop Pictures/Monterey Graphic.heic</string>
 	<key>CreateJamfConnectPassword</key>
 	<true/>
 	<key>DemobilizeUsers</key>
