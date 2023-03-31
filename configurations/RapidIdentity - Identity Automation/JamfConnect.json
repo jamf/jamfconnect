@@ -1,0 +1,105 @@
+{
+    "name": "Jamf Connect",
+    "version": 4,
+    "description": "Jamf Connect is an app that allows administrators to manage authentication by connecting a user's local macOS account to their organization's cloud identity (network account).",
+    "callbackUrls": [
+        "https://127.0.0.1/jamfconnect"
+    ],
+    "attributes": [],
+    "authCodeExpirationSeconds": 60,
+    "tokenExpirationSeconds": 32400,
+    "allowRefreshTokens": true,
+    "refreshExpirationSeconds": 2592000,
+    "oidcConfig": {
+        "enabled": true,
+        "enableROPG": true,
+        "idTokenLifetime": 60,
+        "claimAttributes": [
+            {
+                "@type": "oidc",
+                "name": "Email",
+                "description": "Sends the LDAP mail Attribute",
+                "attributeValue": {
+                    "@type": "ldap",
+                    "length": null,
+                    "resolvable": false,
+                    "values": [],
+                    "singleValued": true,
+                    "regexFilter": null,
+                    "ldapAttribute": "mail",
+                    "binary": false
+                },
+                "claim": "email",
+                "claimType": "string"
+            },
+            {
+                "@type": "oidc",
+                "name": "Role",
+                "description": "Sends the LDAP idautoPersonEmployeeTypes Attribute",
+                "attributeValue": {
+                    "@type": "ldap",
+                    "length": null,
+                    "resolvable": false,
+                    "values": [],
+                    "singleValued": false,
+                    "regexFilter": null,
+                    "ldapAttribute": "idautoPersonEmployeeTypes",
+                    "binary": false
+                },
+                "claim": "role",
+                "claimType": "string"
+            },
+            {
+                "@type": "oidc",
+                "name": "First",
+                "description": "Sends the LDAP givenName Attribute",
+                "attributeValue": {
+                    "@type": "ldap",
+                    "length": null,
+                    "resolvable": false,
+                    "values": [],
+                    "singleValued": true,
+                    "regexFilter": null,
+                    "ldapAttribute": "givenName",
+                    "binary": false
+                },
+                "claim": "first",
+                "claimType": "string"
+            },
+            {
+                "@type": "oidc",
+                "name": "Last",
+                "description": "Sends the LDAP sn Attribute",
+                "attributeValue": {
+                    "@type": "ldap",
+                    "length": null,
+                    "resolvable": false,
+                    "values": [],
+                    "singleValued": true,
+                    "regexFilter": null,
+                    "ldapAttribute": "sn",
+                    "binary": false
+                },
+                "claim": "last",
+                "claimType": "string"
+            }
+        ],
+        "signatureConfig": {
+            "@type": "rsa",
+            "signIdToken": true,
+            "signUserInfo": false,
+            "signatureAlgorithm": "RS256"
+        },
+        "encryptionConfig": {
+            "@type": "rsa",
+            "encryptIdToken": false,
+            "encryptUserInfo": false,
+            "encryptionAlgorithm": "RSA_OAEP_256",
+            "encryptionMethod": "A128CBC_HS256",
+            "publicKey": null,
+            "kid": null
+        }
+    },
+    "id": "53125dfc4723edafb6851482a0247ec0",
+    "federationPartnerType": "oauth"
+}
