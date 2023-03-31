@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>AllowNetworkSelection</key>
+			<true/>
+			<key>CreateJamfConnectPassword</key>
+			<true/>
+			<key>OIDCAdmin</key>
+			<array>
+				<string>idautoPersonEmployeeTypes roles in comma delimited format</string>
+			</array>
+			<key>OIDCAdminAttribute</key>
+			<string>roles</string>
+			<key>OIDCClientID</key>
+			<string>Client ID from RapidIdentity tenant</string>
+			<key>OIDCClientSecret</key>
+			<string>Client Secret Key from RapidIdentity tenant</string>
+			<key>OIDCDiscoveryURL</key>
+			<string>https://[replace with your tenant ID].rapididentity.com/idp/.well-known/openid-configuration</string>
+			<key>OIDCProvider</key>
+			<string>Custom</string>
+			<key>OIDCROPGID</key>
+			<string>Client ID from RapidIdentity tenant</string>
+			<key>OIDCRedirectURI</key>
+			<string>https://127.0.0.1/jamfconnect</string>
+			<key>OIDCScopes</key>
+			<string>openid+profile+email</string>
+			<key>OIDCUsePassthroughAuth</key>
+			<true/>
+			<key>PayloadDescription</key>
+			<string>Jamf Connect Settings</string>
+			<key>PayloadDisplayName</key>
+			<string>Jamf Connect Login</string>
+			<key>PayloadEnabled</key>
+			<true/>
+			<key>PayloadIdentifier</key>
+			<string>0FE3872D-9571-4BEB-A5B6-CCAF82AF4FF7</string>
+			<key>PayloadOrganization</key>
+			<string>Sample</string>
+			<key>PayloadType</key>
+			<string>com.jamf.connect.login</string>
+			<key>PayloadUUID</key>
+			<string>1D396F5F-2975-4B70-A5CD-CCE6EE8604ED</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>ROPGClientSecret</key>
+			<string>Client Secret Key from RapidIdentity tenant</string>
+			<key>ROPGDiscoveryURL</key>
+			<string>https://[replace with your tenant ID].rapididentity.com/idp/.well-known/openid-configuration</string>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>Jamf Connect Settings</string>
+	<key>PayloadDisplayName</key>
+	<string>Jamf Connect Login</string>
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+	<string>0FE3872D-9571-4BEB-A5B6-CCAF82AF4FF7</string>
+	<key>PayloadOrganization</key>
+	<string>Sample</string>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>B6477434-2DA3-4D09-8DA1-93E0B1AB531B</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>

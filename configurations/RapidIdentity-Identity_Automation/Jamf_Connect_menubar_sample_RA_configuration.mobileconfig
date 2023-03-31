@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>Appearance</key>
+			<dict>
+				<key>ShowWelcomeWindow</key>
+				<false/>
+			</dict>
+			<key>IdPSettings</key>
+			<dict>
+				<key>ClientSecret</key>
+				<string>Client Secret Key from RapidIdentity tenant</string>
+				<key>DiscoveryURL</key>
+				<string>https://[replace with your tenant ID].rapididentity.com/idp/.well-known/openid-configuration</string>
+				<key>Provider</key>
+				<string>Custom</string>
+				<key>ROPGID</key>
+				<string>Client ID from RapidIdentity tenant</string>
+			</dict>
+			<key>PayloadDescription</key>
+			<string>Jamf Connect Login Settings</string>
+			<key>PayloadDisplayName</key>
+			<string>Jamf Connect</string>
+			<key>PayloadEnabled</key>
+			<true/>
+			<key>PayloadIdentifier</key>
+			<string>7036526D-57AA-449D-A776-A3F1686D5355</string>
+			<key>PayloadOrganization</key>
+			<string>Sample</string>
+			<key>PayloadType</key>
+			<string>com.jamf.connect</string>
+			<key>PayloadUUID</key>
+			<string>610E63F6-D72A-42FE-9998-669B16E512A4</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>Jamf Connect Login Settings</string>
+	<key>PayloadDisplayName</key>
+	<string>Jamf Connect</string>
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+	<string>7036526D-57AA-449D-A776-A3F1686D5355</string>
+	<key>PayloadOrganization</key>
+	<string>Sample</string>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>D64D0B89-8639-4954-8409-99C7AE6CDDDC</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>
