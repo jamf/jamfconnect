@@ -1,0 +1,12 @@
+# Microsoft Azure AD
+
+To integrate with Microsoft Azure AD you need to create an `App Registration` in Azure AD, to do this manually please refer to the [Integrating with Microsoft Azure AD](https://learn.jamf.com/bundle/jamf-connect-documentation-current/page/Integrating_with_Microsoft_Azure_AD.html) guide
+
+Contained within this repository are example PLIST's specifically for Microsoft Azure AD and Jamf Connect which can be used as template.
+
+You could create the required Jamf Connect `App Registration` in matter of seconds using the Microsoft Graph API Explorer.
+
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://developer.microsoft.com/en-us/graph/graph-explorer?request=applications&method=POST&version=v1.0&GraphUrl=https://graph.microsoft.com&requestBody=eyJkaXNwbGF5TmFtZSI6IkphbWYgQ29ubmVjdCIsImlzRmFsbGJhY2tQdWJsaWNDbGllbnQiOnRydWUsInB1YmxpY0NsaWVudCI6eyJyZWRpcmVjdFVyaXMiOlsiamFtZmNvbm5lY3Q6Ly9yZWRpcmVjdC9hdXRoIiwiaHR0cHM6Ly8xMjcuMC4wLjEvamFtZmNvbm5lY3QiXX0sInNpZ25JbkF1ZGllbmNlIjoiQXp1cmVBRE15T3JnIiwiYXBwUm9sZXMiOlt7ImFsbG93ZWRNZW1iZXJUeXBlcyI6WyJVc2VyIl0sImRlc2NyaXB0aW9uIjoiTWVtYmVycyBvZiB0aGUgU3RhbmRhcmQgZ3JvdXAuIiwiZGlzcGxheU5hbWUiOiJTdGFuZGFyZCIsImlkIjoiN2JmZTQ1ZDUtNGI1Yy00MmJkLTljYTktNWQ5ZGEwNTVlMzE3IiwiaXNFbmFibGVkIjp0cnVlLCJvcmlnaW4iOiJBcHBsaWNhdGlvbiIsInZhbHVlIjoiU3RhbmRhcmQifSx7ImFsbG93ZWRNZW1iZXJUeXBlcyI6WyJVc2VyIl0sImRlc2NyaXB0aW9uIjoiTWVtYmVycyBvZiB0aGUgQWRtaW4gZ3JvdXAuIiwiZGlzcGxheU5hbWUiOiJBZG1pbiIsImlkIjoiYTg3MTlkZDAtMzAwOS00YzczLWIxYzAtMzVjNTk1NWVjNzk1IiwiaXNFbmFibGVkIjp0cnVlLCJvcmlnaW4iOiJBcHBsaWNhdGlvbiIsInZhbHVlIjoiQWRtaW4ifV19&headers=W3sibmFtZSI6IkNvbnRlbnQtdHlwZSIsInZhbHVlIjoiYXBwbGljYXRpb24vanNvbiJ9XQ==)
+
+
+**Disclaimer:** All resources contained in this repository are provided as-is and are not officially supported by Jamf Support.
