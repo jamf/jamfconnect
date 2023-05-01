@@ -12,10 +12,10 @@ To integrate with RapidIdentity, you must create an Identity Provider Federation
 
 To create a new Federation Partner, you can either import a .json definition file or create a new integration manually.
 
-## Importing a definition file
+## Option 1 - Recommended - Importing a definition file
 1. Download the JamfConnect.json definition file from the Jamf Connect GitHub repository located at https://github.com/jamf/jamfconnect/tree/main/configurations/RapidIdentity-Identity_Automation
 2. Select “Import” from the bottom navigation bar.  Select the JamfConnect.json file.
-## Manually add federation partner
+## Option 2 - Manually add federation partner
 1. Click “Add Federation Partner”.  Select the option for “OpenID Connect”.
 2. Expand the section titled “General.  
     1. Name: “Jamf Connect”
