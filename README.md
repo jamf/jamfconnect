@@ -30,6 +30,10 @@ Some Jamf Connect processes can be run via scripts:
 - Read data from [com.jamf.connect.state.plist](https://docs.jamf.com/jamf-connect/documentation/State_Settings_and_User_Status.html) to use in scripts.
 - Execute the [authchanger](https://docs.jamf.com/jamf-connect/documentation/authchanger.html) command-line tool to change the macOS loginwindow from a script or run certain actions with Jamf Connect at login.
 
+### Helper Tools
+
+The tools contained within this section of the repository are built to help deliver the best possible implementation of Jamf Connect.
+
 ### Debugging Logs
 
 For more information about Jamf Connect logs, see [Jamf Connect Logs](https://docs.jamf.com/jamf-connect/documentation/Jamf_Connect_Logs.html) in the _Jamf Connect Documentation_.

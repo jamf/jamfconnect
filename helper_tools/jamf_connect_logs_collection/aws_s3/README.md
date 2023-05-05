@@ -1,4 +1,4 @@
-# Jamf Connect Logs Collection (AWS S3)
+# Helper Tools - Jamf Connect Logs Collection (AWS S3)
 
 This script is provided to trigger and collect the output from an `jamfconnect logs` and upload it to an AWS S3 bucket.
 
