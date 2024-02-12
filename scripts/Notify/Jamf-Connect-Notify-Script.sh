@@ -1,64 +1,108 @@
-#!/bin/zsh
-# Copyright (c) 2022 JAMF Software, LLC
+#!/bin/bash
 
+# Sample notify screen script
+# Copyright 2024 Jamf 
+# Updated 12 FEB 2024
 
-#variables
-NOTIFY_LOG="/var/tmp/depnotify.log"
-#For TOKEN_BASIC, use same file path location as set for OIDCIDTokenPath in com.jamf.connect.login
-TOKEN_BASIC="/tmp/token"
-TOKEN_GIVEN_NAME=$(echo "$(cat $TOKEN_BASIC)" | sed -e 's/\"//g' | awk -v k="text" '{n=split($0,a,","); for (i=1; i<=n; i++) print a[i]}' | grep given_name | cut -d ":" -f2)
-TOKEN_UPN=$(echo "$(cat $TOKEN_BASIC)" | sed -e 's/\"//g' | awk -v k="text" '{n=split($0,a,","); for (i=1; i<=n; i++) print a[i]}' | grep upn | cut -d ":" -f2)
+# This script is not intended for use in production without modification to
+# fit your organization's specific environment and needs.
 
-echo $TOKEN_GIVEN_NAME
-echo $TOKEN_UPN
- 
-echo "STARTING RUN" >> $NOTIFY_LOG # Define the number of increments for the progress bar
-echo "Command: Determinate: 6" >> $NOTIFY_LOG
- 
-#1 - Introduction window with username and animation
-echo "Command: Image: /System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/com.apple.macbookpro-15-retina-touchid-silver.icns" >> $NOTIFY_LOG
-echo "Command: MainTitle: Welcome, $TOKEN_GIVEN_NAME" >> $NOTIFY_LOG
-echo "Command: MainText: Your Mac is now enrolled and will be automatically configured for you." >> $NOTIFY_LOG
-echo "Status: Preparing your new Mac..." >> $NOTIFY_LOG
-sleep 10
- 
-#2 - Setting up single sign-on passwords for local account
-echo "Command: Image: /System/Applications/Utilities/Keychain Access.app/Contents/Resources/AppIcon.icns" >> $NOTIFY_LOG
-echo "Command: MainTitle: Tired of remembering multiple passwords? \n $TOKEN_GIVEN_NAME " >> $NOTIFY_LOG
-echo "Command: MainText: We use single sign-on services to help you sign in to each of our corporate services.
-Use your email address and account password to sign in to all necessary applications." >> $NOTIFY_LOG
-echo "Status: Setting the password for your Mac to sync with your network password..." >> $NOTIFY_LOG
-sleep 10
- 
-#3 - Self Service makes the Mac life easier
-echo "Command: Image: /Applications/Self Service.app/Contents/Resources/AppIcon.icns" >> $NOTIFY_LOG
-echo "Command: MainTitle: Self Service makes Mac life easier" >> $NOTIFY_LOG
-echo "Command: MainText: Self Service includes helpful bookmarks and installers for other applications that may interest you." >> $NOTIFY_LOG
-echo "Status: Installing Self Service..." >> $NOTIFY_LOG
-sleep 10
- 
-#4 - Everything you need for your first day
-###Jamf Triggers
-echo "Command: Image: /System/Library/CoreServices/Install in Progress.app/Contents/Resources/Installer.icns" >> $NOTIFY_LOG
-echo "Command: MainTitle: Installing everything you need for your first day." >> $NOTIFY_LOG
-echo "Command: MainText: All the apps you will need today are already being installed. When setup is complete, you'll find Microsoft Office, Slack, and Zoom are all ready to go. Launch apps from the Dock and have fun!" >> $NOTIFY_LOG
-echo "Status: Installing Microsoft Office..." >> $NOTIFY_LOG
-/usr/local/bin/jamf policy -event "InstallOffice"
-sleep 5
- 
-#5 - Finishing up
-echo "Command: Image: /System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/ApplicationsFolderIcon.icns" >> $NOTIFY_LOG
-echo "Status: Installing Slack..." >> $NOTIFY_LOG
-/usr/local/bin/jamf policy -event "InstallSlack"
-sleep 5
-echo "Status: Finishing up... We're almost ready for you, $TOKEN_GIVEN_NAME" >> $NOTIFY_LOG
-sleep 3
- 
-###Clean Up
-sleep 3
-echo "Command: Quit" >> $NOTIFY_LOG
-sleep 1
-rm -rf $NOTIFY_LOG
- 
-#6 - Disable notify screen from loginwindow process
+# This script shows examples of how each of the commands for Notify work.
+# It is NOT intended be a real life example of an onboarding script.
+
+# This script can be deployed to a computer via a prestage enrollment package
+# The script must be located in a directory which has execute permissions
+# The script file must have execute permissions for the root user (700) 
+# We recommend that the script owner be set to root:wheel
+
+# If this script is executed via Jamf Connect through the RunScript preference,
+# the script will be executed by the "root" user.  sudo commands are not needed.
+
+### Variables
+# Set the location of the control file
+controlFile = "/var/tmp/depnotify.log"
+# Expected location of the Jamf binary
+jamfBinary = "/usr/local/bin/jamf"
+
+# Set the Main Title at the top of the window
+echo "Command: MainTitle: Welcome to AnyCo!" >> "$controlFile"
+
+# Text in the MainText area can include a forced "newline" with the text "\\n"
+echo "Command: MainText: Welcome to your new Mac.\\nSit tight as we do some basic setup to get you ready for success.\\nYou can see the status of the setup on the progress bar below." >> "$controlFile"
+
+# Status appears below the 
+echo "Status: Installing Jamf..." >> "$controlFile"
+
+# Perform an action that may take some time
+# Example: Wait until the Jamf Binary is downloaded and installed
+until [ -f "$jamfBinary" ]
+do
+	echo "Status: Waiting on Jamf Pro agent install" >> "$controlFile" 
+	sleep 2
+done
+
+# Example: Wait until Jamf Self Service is downloaded and installed
+until [ -f "/Applications/Self Service.app/Contents/Resources/AppIcon.icns" ]
+do
+	echo "Status: Installing Jamf Self Service..." >> "$controlFile" 
+	sleep 2
+done
+
+# Change the Determinate bar from "cylon" mode to 2 steps
+echo "Command: Determinate: 2" >> "$controlFile"
+
+# Make your screen informative to the end user so they know something good is 
+# happening to their computer.  Graphics and text should be short and simple so 
+# they can be read before the policy completes.  Apple computers just keep 
+# getting faster, so keep that in mind!
+
+echo "Command: MainTitle: Jamf Self Service makes Mac life easier" >> "$controlFile"
+
+# Long text in the MainText field will automatically pageinate so you don't 
+# need to include line breaks.
+echo "Command: MainText: Self Service is your personal app store for AnyCo.  We've also included helpful extras like bookmarks and utilities to keep your Mac running great." >> "$controlFile"
+
+# Images must be installed locally on the Mac.  .icns files are perfect and 
+# several are built into macOS automatically.  .png, .gif, and .jpg files are 
+# also acceptable.
+echo "Command: Image: /Applications/Self Service.app/Contents/Resources/AppIcon.icns" >> "$controlFile"
+
+# When a Status command is sent, the Determinate bar will increment by one step
+echo "Status: Installing Jamf Protect..." >> "$controlFile"
+
+# A Jamf policy to install software may take a few moments to complete while the
+# package is downloaded to the target device and the installer runs.  We can use
+# a custom trigger to call specific onboarding policies and installers
+
+# This example will start any policy set to trigger on the custom trigger named 
+# "InstallJamfProtect"
+$jamfBinary policy -event InstallJamfProtect
+
+# When a Status command is sent, the Determinate bar will increment by one step
+echo "Status: Installing essential software..." >> "$controlFile"
+
+# More than one policy can be triggered by one trigger event.  Policies will be 
+# run in alpha numeric order as they are named.  For example, a policy named
+###  10 - Install Essential Software
+# will run before a policy named
+###  20 - Install Even More Essential Software
+# if both policies run on a custom trigger named "OnboardingEssentials"
+
+$jamfBinary policy -event OnboardingEssentials
+
+# Once your onboarding is complete, it is best practice to disable the notify 
+# screen from appearing at every login
+
+# Disable notify screen from loginwindow process
 /usr/local/bin/authchanger -reset -JamfConnect	
+
+# Close the notify screen and continue the loginwindow process.  The user will 
+# now start their first macOS user session
+echo "Command: Quit" >> "$controlFile"
+
+# The notify screen will read all of the commands in a control file when it 
+# launches. Therefore, in case you ever need to use the notify screen on the 
+# same computer again, it's best to clean up after ourselves and delete the 
+# control file.
+
+rm -rf "$controlFile"
