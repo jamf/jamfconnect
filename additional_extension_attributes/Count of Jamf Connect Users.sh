@@ -26,7 +26,7 @@ for user in $(dscl . list /Users Password | awk '$2 != "*" {print $1}');do
 	if [[ ("$user" != "$jamfManagementAccount") && ("$user" != "_mbsetupuser") ]]; then
 		# Look in the dscl record for the user and see if there is an entry for OIDCProvider
 		# Jamf Connect will add that to the user record when it is migrated or created
-		MIGRATESTATUS=($(dscl . -read /Users/$user | grep "OIDCProvider: " | awk {'print $2'}))
+		MIGRATESTATUS=($(dscl . -read /Users/$user | grep "NetworkUser: " | awk {'print $2'}))
 		# If we didn't get a result, the variable is empty.  Thus that user hasn't been migrated.
 		if [[ -z $MIGRATESTATUS ]]; 
 		then
