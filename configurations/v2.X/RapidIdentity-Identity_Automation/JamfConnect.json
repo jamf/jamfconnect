@@ -13,6 +13,7 @@
     "oidcConfig": {
         "enabled": true,
         "enableROPG": true,
+        "pkceEnabled" : true,
         "idTokenLifetime": 60,
         "claimAttributes": [
             {
