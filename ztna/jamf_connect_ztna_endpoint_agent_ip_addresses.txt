@@ -1,3 +1,5 @@
+Note: this list is no longer being updated. See the "jamf_ztna_endpoint" in the following Jamf platform resource: https://engineering.jamf.com/tc-docs-public-ip-lists/public-ips.yaml
+
 44.232.168.72/32
 44.232.62.192/32
 52.40.74.185/32
