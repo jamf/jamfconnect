@@ -91,11 +91,15 @@ CollectArchive () {
     
         # Check for the gsutil binary. If not present, install the Google Cloud SDK.
         if [[ ! -f "$gsutilBinary" ]]; then
-            /usr/bin/curl https://sdk.cloud.google.com > /tmp/install.sh
-            /bin/bash /tmp/install.sh --disable-prompts --install-dir /usr/local &>/dev/null
+            # Use a private, root-owned temporary directory (never a fixed path in /tmp)
+            installDir=$(/usr/bin/mktemp -d /var/run/jclogs.XXXXXXXX) || exit 1
+            /usr/bin/curl -fsSL https://sdk.cloud.google.com -o "$installDir/install.sh" && \
+                /bin/bash "$installDir/install.sh" --disable-prompts --install-dir /usr/local &>/dev/null
+            gsutilInstallRc=$?
+            /bin/rm -rf "$installDir"
         fi
         
-        export gsutilInstallStatus=$?
+        export gsutilInstallStatus=${gsutilInstallRc:-0}
 
         if [[ "$gsutilInstallStatus" -eq 0 ]]; then
             echo "Google Cloud SDK Installed. Installing Boto configuration file."
@@ -107,6 +111,11 @@ CollectArchive () {
         fi
 
         if [[ "$botoConfigStatus" -eq 0 ]]; then
+            # Never fall back to the console user's ~/.boto when running as root
+            if [[ -z "$botoConfig" ]]; then
+                echo "No Boto configuration file path set (botoConfig). Exiting."
+                exit 1
+            fi
             export BOTO_CONFIG="$botoConfig"
 
             # Use the gsutil to copy the archive to the desginated bucket
@@ -170,7 +179,6 @@ CleanUp () {
     # Remove Google Cloud SDK and Boto configuration file
     echo "Removing Google Cloud SDK and Boto configuration file."
     /bin/rm -rf /usr/local/google-cloud-sdk
-    /bin/rm /tmp/install.sh
     /bin/rm -r /opt/.boto
 }
 

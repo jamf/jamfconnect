@@ -13,7 +13,12 @@ currentUser=$(ls -l /dev/console | awk '/ / { print $3 }')
 #com.jamf.connect.state.plist location
 jamfConnectStateLocation=/Users/$currentUser/Library/Preferences/com.jamf.connect.state.plist
 
-UserEmail=$(/usr/libexec/PlistBuddy -c "Print :UserEmail" $jamfConnectStateLocation || echo "Does not exist")
+# Only read a regular file (not a symlink or FIFO) owned by the user, never one pointing elsewhere
+if [ -f "$jamfConnectStateLocation" ] && [ ! -L "$jamfConnectStateLocation" ] && [ "$(/usr/bin/stat -f %u "$jamfConnectStateLocation")" = "$(/usr/bin/id -u "$currentUser")" ]; then
+    UserEmail=$(/usr/libexec/PlistBuddy -c "Print :UserEmail" "$jamfConnectStateLocation" 2>/dev/null || echo "Does not exist")
+else
+    UserEmail="Does not exist"
+fi
 echo "UserEmail"
 echo "<result>$UserEmail</result>"
 

@@ -31,6 +31,6 @@
 	<key>OIDCUsePassthroughAuth</key>
 	<true/>
 	<key>ScriptPath</key>
-	<string>/Users/Shared/JamfConnectEvaluationAssets/NotifyMech.sh</string>
+	<string>/Library/Application Support/JamfConnect/NotifyMech.sh</string>
 </dict>
 </plist>

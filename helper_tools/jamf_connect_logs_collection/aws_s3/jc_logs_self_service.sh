@@ -99,20 +99,20 @@ CollectArchive () {
 		
 		# Check for the AWS binary. If not present, install.
 		if [[ ! -f "$awsBinary" ]]; then    
-			/usr/bin/curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o /tmp/AWSCLIV2.pkg
-			/usr/sbin/installer -pkg /tmp/AWSCLIV2.pkg -target /
-		
-			# Verify the download
-			teamID=$(/usr/sbin/spctl -a -vv -t install "/tmp/AWSCLIV2.pkg" 2>&1 | awk '/origin=/ {print $NF }' | tr -d '()')
+			# Download into a private, root-owned temporary directory (never a fixed path in /tmp)
+			workDir=$(/usr/bin/mktemp -d /var/run/jclogs.XXXXXXXX) || exit 1
+			trap '/bin/rm -rf "$workDir"' EXIT
+			awsPkg="$workDir/AWSCLIV2.pkg"
+			/usr/bin/curl -fsSL "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "$awsPkg" || { echo "AWSCLI download failed."; exit 1; }
 
-			# Install and clean up the package if Team ID validates
-			if [ "$expectedAwscliTeamID" = "$teamID" ] || [ "$expectedAwscliTeamID" = "" ]; then
+			# Verify the download before installing anything
+			teamID=$(/usr/sbin/spctl -a -vv -t install "$awsPkg" 2>&1 | awk '/origin=/ {print $NF }' | tr -d '()')
+
+			if [ -n "$expectedAwscliTeamID" ] && [ "$expectedAwscliTeamID" = "$teamID" ]; then
 				echo "AWSCLI Team ID verification succeeded"
-				/usr/sbin/installer -pkg /tmp/AWSCLIV2.pkg -target /
-				/bin/rm /tmp/AWSCLIV2.pkg
+				/usr/sbin/installer -pkg "$awsPkg" -target /
 			else
 				echo "AWSCLI Team ID verification failed."
-				/bin/rm /tmp/AWSCLIV2.pkg
 				exit 1
 			fi
 		fi

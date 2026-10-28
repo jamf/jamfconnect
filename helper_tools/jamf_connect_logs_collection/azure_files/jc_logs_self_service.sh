@@ -69,6 +69,9 @@ customPath_files=$(find "$customPath" -name 'JamfConnectLogs*.*.zip')
 # Expected AWS CLI Binary TeamID
 expectedAwscliTeamID="94KV3E626L"
 
+# Expected Azure Copy (azcopy) Binary TeamID. Must be set, installation is refused otherwise.
+expectedAzcopyTeamID="UBF8T346G9"
+
 ################# Script Functions ##################
 
 startLogs () {
@@ -170,23 +173,23 @@ CollectArchive () {
         # Check for the Azure Copy binary. If not present, install.
         if [[ ! -f "$azcopyBinary" ]]; then
             echo "Azure Copy CLI not Installed, downloading and installing"
-        	/usr/bin/curl -Ls https://aka.ms/downloadazcopy-v10-mac --output /tmp/azcopy.zip
-            /usr/bin/unzip -j -qq "/tmp/azcopy.zip" -d "$azcopyBinary"
-		
-			# Verify the download
-			teamID=$(codesign -dv "$azcopyBinary" 2>&1 | grep TeamIdentifier | awk -F '=' '{print $2}')
+            # Download into a private, root-owned temporary directory (never a fixed path in /tmp)
+            workDir=$(/usr/bin/mktemp -d /var/run/jclogs.XXXXXXXX) || exit 1
+            trap '/bin/rm -rf "$workDir"' EXIT
+            /usr/bin/curl -fLs https://aka.ms/downloadazcopy-v10-mac --output "$workDir/azcopy.zip" || { echo "azcopy download failed."; exit 1; }
+            /bin/mkdir -p "$azcopyBinary"
+            /usr/bin/unzip -j -qq "$workDir/azcopy.zip" -d "$azcopyBinary"
 
-			# Check and clean up the binary if Team ID does not validate
-			if [ "$expectedAzcopyTeamID" = "$teamID" ] || [ "$expectedAzcopyTeamID" = "" ]; then
-				echo "azcopy Team ID verification succeeded"
-				/bin/rm "/tmp/azcopy.zip"
-			else
-				echo "azcopy Team ID verification failed."
+            # Verify the extracted azcopy executable; the Team ID must be set and must match
+            teamID=$(/usr/bin/codesign -dv "$azcopyBinary/azcopy" 2>&1 | grep TeamIdentifier | awk -F '=' '{print $2}')
+
+            if [ -n "$expectedAzcopyTeamID" ] && [ "$expectedAzcopyTeamID" = "$teamID" ]; then
+                echo "azcopy Team ID verification succeeded"
+            else
+                echo "azcopy Team ID verification failed."
                 /bin/rm -rf "$azcopyBinary"
-                /bin/rm -rf /Users/"$loggedInUser"/.azcopy
-				/bin/rm "/tmp/azcopy.zip"
-				exit 1
-			fi
+                exit 1
+            fi
         fi
 
         export azcopyInstallStatus=$?
