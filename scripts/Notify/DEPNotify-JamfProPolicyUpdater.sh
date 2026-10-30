@@ -30,6 +30,17 @@
 
 DEP_NOTIFY_LOG="/var/tmp/depnotify.log"
 
+# The control file lives in a world-writable sticky directory. Remove anything a local user may have
+# pre-created (symlink, FIFO, file owned by someone else) so root never follows or hangs on it.
+if [ -e "$DEP_NOTIFY_LOG" ] || [ -L "$DEP_NOTIFY_LOG" ]; then
+    if [ -L "$DEP_NOTIFY_LOG" ] || [ ! -f "$DEP_NOTIFY_LOG" ] || [ "$(/usr/bin/stat -f %u "$DEP_NOTIFY_LOG")" != "0" ]; then
+        /bin/rm -f "$DEP_NOTIFY_LOG"
+    fi
+fi
+if [ ! -e "$DEP_NOTIFY_LOG" ]; then
+    ( umask 022; : > "$DEP_NOTIFY_LOG" )
+fi
+
 STATUS_STRING=$4
 MAIN_TITLE_STRING=$5
 MAIN_TEXT_STRING=$6

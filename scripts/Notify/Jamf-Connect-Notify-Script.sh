@@ -21,6 +21,17 @@
 ### Variables
 # Set the location of the control file
 controlFile="/var/tmp/depnotify.log"
+
+# The control file lives in a world-writable sticky directory. Remove anything a local user may have
+# pre-created (symlink, FIFO, file owned by someone else) so root never follows or hangs on it.
+if [ -e "$controlFile" ] || [ -L "$controlFile" ]; then
+    if [ -L "$controlFile" ] || [ ! -f "$controlFile" ] || [ "$(/usr/bin/stat -f %u "$controlFile")" != "0" ]; then
+        /bin/rm -f "$controlFile"
+    fi
+fi
+if [ ! -e "$controlFile" ]; then
+    ( umask 022; : > "$controlFile" )
+fi
 # Expected location of the Jamf binary
 jamfBinary="/usr/local/bin/jamf"
 
