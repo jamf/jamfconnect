@@ -30,7 +30,7 @@ dscl . delete /Users/"$localUser" dsAttrTypeStandard:OktaUser
 # If the user account has signed into iCloud, there may also be an alias 
 # created by Apple that begins with "com.apple.idms.appleid.prd." followed by
 # a unique identifier string.  Because of this, we can't automatically remove
-# the aliases based on there being a posibility of breaking something from 
+# the aliases based on there being a possibility of breaking something from 
 # the undocumented realms of the fruit company.
 
 localUserAlias=$(dscl . read /Users/"$localUser" RecordName) #| awk -F " " '{print $NF}')

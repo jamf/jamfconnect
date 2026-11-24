@@ -74,10 +74,10 @@ expectedAwscliTeamID="94KV3E626L"
 startLogs () {
 	
 	if [ "$customPath" == "" ]; then
-		echo "Staring Jamf Connect Logs collection"
+		echo "Starting Jamf Connect Logs collection"
 		/usr/local/bin/jamfconnect logs --filename JamfConnectLogs-"$compHostName"-"$loggedInUser"
 	else
-		echo "Staring Jamf Connect Logs collection, exported to $customPath"
+		echo "Starting Jamf Connect Logs collection, exported to $customPath"
 		/usr/local/bin/jamfconnect logs --output-directory "$customPath" --filename JamfConnectLogs-"$compHostName"-"$loggedInUser"	
 	fi
 }
@@ -133,7 +133,7 @@ CollectArchive () {
 			export AWS_CONFIG_FILE="$awsFolder"/config
 			export AWS_SHARED_CREDENTIALS_FILE="$awsFolder"/credentials
 			
-			# Use the AWS CLI to copy the archive to the desginated bucket
+			# Use the AWS CLI to copy the archive to the designated bucket
 			if [ "$customPath" == "" ]; then
 				echo "The AWS binary is present, initiating the upload.."
 				"$awsBinary" s3 cp "/Library/Application Support/JamfConnect/Logs/" s3://"$s3Bucket" --recursive --exclude "*" --include "JamfConnectLogs*"
@@ -183,7 +183,7 @@ NetworkCheckAndUpload () {
 # Clean up and end this workflow
 CleanUp () {
 	
-	# Clean up the Jamf Connect Logs archive if upload was sucecessful
+	# Clean up the Jamf Connect Logs archive if upload was successful
 	echo "Removing Jamf Connect Logs archive."
 	if [[ "$uploadStatus" -eq 0 ]] && [[ "$customPath" == "" ]]; then
 		/bin/rm "/Library/Application Support/JamfConnect/Logs/"*

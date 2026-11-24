@@ -69,7 +69,7 @@ echo "Command: Determinate: 2" >> "$controlFile"
 
 echo "Command: MainTitle: Jamf Self Service makes Mac life easier" >> "$controlFile"
 
-# Long text in the MainText field will automatically pageinate so you don't 
+# Long text in the MainText field will automatically paginate so you don't 
 # need to include line breaks.
 echo "Command: MainText: Self Service is your personal app store for AnyCo.  We've also included helpful extras like bookmarks and utilities to keep your Mac running great." >> "$controlFile"
 

@@ -38,7 +38,7 @@ LastSignIn=$(/usr/libexec/PlistBuddy -c "Print :LastSignIn" "$jamfConnectStateLo
 
 # If our result is "No record found", return the result to the EA and stop
 if [ "$LastSignIn" = "No record found" ]; then
-	echo "<result>No record foundn</result>"
+	echo "<result>No record found</result>"
 	exit 0;
 # Otherwise, use the date command to calculate how far back in Epoch time is our maximum sign in date, compare to the
 #	results of the LastSignIn.

@@ -2,7 +2,7 @@
 
 ####################################
 # Checks for an existing Jamf Connect license installed on a Mac 
-# and reports license details similar to Jamf Connects' About window.
+# and reports license details similar to Jamf Connect's About window.
 
 # MIT License
 #
